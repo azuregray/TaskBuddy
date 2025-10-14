@@ -5,26 +5,38 @@ import './App.css'
 import { useEffect, useState } from "react"
 
 export default function App() {
-
-  const [tasks, setTasks] = useState([])
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  })
+  const [tasks, setTasks] = useState([]);
+  useEffect(() => localStorage.setItem("tasks", JSON.stringify(tasks)))
 
   const addTask = (task) => {
     setTasks([...tasks, task]);
   }
 
+  const deleteTask = (index) => {
+    setTasks(tasks.filter((_, i) => i != index));
+  }
+
+  const updateTask = (updatedTask, index) => {
+    const newTask = [...tasks];
+    newTask[index] = updatedTask;
+    setTasks(newTask);
+  }
+
+  const clearTasks = () => {
+    setTasks([]);
+  }
+
   return (
-    <div>
-      <h1>Task Buddy</h1>
-      <h2>Your true buddy.</h2>
+    <div className="app">
+      <header>
+        <h1 className="app-header"> Task Buddy </h1>
+        <h2 className="app-subheader"> Your true buddy. </h2>
+      </header>
       <hr />
-      <TaskForm addTask={addTask} />
-      <TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+      <TaskForm addTask={ addTask } />
+      <TaskList tasks={ tasks } updateTask={ updateTask } deleteTask={ deleteTask } />
       <ProgressTracker />
-      <button>Clear all tasks</button>
+      <button onClick={ clearTasks }>Clear all tasks</button>
     </div>
   )
 }

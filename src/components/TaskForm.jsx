@@ -25,21 +25,18 @@ export default function TaskForm({addTask}) {
     }
 
   return (
-    <>
     <form className="task-form" onSubmit={submitHandler}>
       <div className="task-form-input">
         <input type="text" className="task-form-input" placeholder="Enter your task here."  value={task} onChange={(e) => setTask(e.target.value)} />
         <button type="submit">Add Task</button>
       </div>
-
       <div className="task-form-selectors">
         <select value={priority} onChange={(e) => setPriority(e.target.value)} required>
-        <option value="" disabled selected>Choose a value</option>
+          <option value="" disabled selected>Choose a value</option>
           <option value="high">High</option>
           <option value="medium">Medium</option>
           <option value="low">Low</option>
         </select>
-
         <select value={category} onChange={(e) => setCategory(e.target.value)} required>
           <option value="" disabled selected>Choose a value</option>
           <option value="general">General</option>
@@ -49,8 +46,5 @@ export default function TaskForm({addTask}) {
         </select>
       </div>
     </form>
-    {/* Dev Test Output */}
-    <h4>Output :: {task} {priority} {category} </h4>
-    </>
   )
 }
