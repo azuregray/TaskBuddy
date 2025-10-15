@@ -1,5 +1,0 @@
-.task-form, .task-form-selectors {
-    display: flex;
-    flex-direction: row;
-    column-gap: 15px;
-}

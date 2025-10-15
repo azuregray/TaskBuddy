@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "./TaskForm.css"
 
 export default function TaskForm({addTask}) {
     const [task, setTask] = useState('');

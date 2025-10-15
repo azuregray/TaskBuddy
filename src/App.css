@@ -1,6 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.task-form, .task-form-selectors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 15px;
+}
+
+.task-form-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 8px 10px;
+  border: 4px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.task-list-item, .task-list-item-buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 100px;
+  align-items: center;
+}
+
+.task-list-item {
+  border-style: groove;
+  border-color: cadetblue;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.task-list-item-buttons-wrapper {
+  column-gap: 15px;
+}
+
+.progress-tracker {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50; /* Green color for the progress */
+  transition: width 0.3s ease;
 }

@@ -1,5 +1,3 @@
-import './TaskList.css'
-
 export default function TaskList({tasks, updateTask, deleteTask}) {
 
   const toggleComplete = (index) => {
